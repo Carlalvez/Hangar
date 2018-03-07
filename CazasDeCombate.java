@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 /**
  *
  * @autor (Carlos Alvarez)
@@ -10,27 +11,21 @@ public class CazasDeCombate
     // Modelo del caza de combate
     private String modelo;
     // Diseñador del caza de combate
-    private String creador;
-    // Potencia del caza de combate
     private int potencia;
-    // Velocidad Maxima del caza de combate
-    private int maxVelocidad;
-    // Funcion que desempeñan
-    private String tipo;
     // Identificador unico [pide commit 1]
     private int id;
+    // Fecha de produccion moto
+    private LocalDate fechaFabricacion;
     /**
      * Constructor CazasDeCombate
      */
-    public CazasDeCombate(String marca, String modelo, String creador, int potencia, int maxVelocidad, String tipo, int id)
+    public CazasDeCombate(String marca, String modelo, int potencia, int identificador, int ano,int mes, int dia)
     {
         this.marca = marca;
         this.modelo = modelo;
-        this.creador = creador;
-        potencia = potencia;
-        maxVelocidad = maxVelocidad;
-        this.tipo = tipo;
-        id = id;
+        this.potencia = potencia;
+        fechaFabricacion = LocalDate.of(ano,mes,dia);
+        id = identificador;
     }
     
     // METODOS GETTERS //
@@ -56,17 +51,12 @@ public class CazasDeCombate
     {
         return modelo;
     }  
-    
     /**
-     *
-     * @param  creador del caza
-     * @return  nombre del creador del caza
-     */
-    
-    public String getCreador()
-    {
-        return marca;
-    }  
+    * Devuelve la fecha de fabricacion del caza.
+    */
+     public LocalDate getFechaFabricacion(){
+         return fechaFabricacion;
+     }
     
     /**
      *
@@ -79,29 +69,7 @@ public class CazasDeCombate
         return potencia;
     }  
     
-    /**
-     *
-     * @param  velocidad del caza
-     * @return  velocidad maxima del caza
-     */
-    
-    public int getmaxVelocidad()
-    {
-        return maxVelocidad;
-    }  
-    
-    /**
-     *
-     * @param  funcion del caza
-     * @return  funcion del caza
-     */
-    
-    public String getTipo()
-    {
-        return tipo;
-    }  
-    
-    /**
+      /**
      *
      * @param  Identificador del caza
      * @return  Numero indentificador del caza
@@ -129,19 +97,9 @@ public class CazasDeCombate
      * @param  setModelo - Modelo del caza
      */
     
-    public void setModelo(String setModelo)
+    public void setModelo (String setModelo)
     {
         this.modelo = modelo;
-    } 
-    
-    /**
-     *
-     * @param setCreador - Nombre del creador del caza
-     */
-    
-    public void setCreador(String setCreador)
-    {
-        this.creador = creador;
     } 
     
     /**
@@ -155,32 +113,28 @@ public class CazasDeCombate
     } 
     
     /**
-     *
-     * @param setMaxvelocidad - Velocidad maxima del caza
-     */
-    
-    public void setMaxvelocidad (int setMaxvelocidad)
-    {
-        this.maxVelocidad = maxVelocidad;
-    } 
-    
-    /**
-     *
-     * @param setTipo - Funcion que ejerce el caza
-     */
-    
-    public void setTipo (String setTipo)
-    {
-        this.tipo = tipo;
-    } 
-    
+      * Permite modificar la fecha de produccion de la moto.
+      */
+    public void setFechaProduccion(int ano,int mes, int dia){
+        fechaFabricacion = LocalDate.of(ano,mes,dia);
+        
+     }
+        
      /**
      *
      * @param  setId - Identificador del caza
     */
     
-    public void setId(int setId)
+    public void setId (int setId)
     {
         this.id = id;
     } 
+    
+    /**
+     * @return Devuelve toda la informacion sobre un caza de combate.
+     */
+    public String getInfo() {
+        String datos ="Identificador : #" + id + " - marca: " + marca + " - modelo: " + modelo + " - potencia: " + potencia;
+        return datos;
+    }
 }

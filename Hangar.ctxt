@@ -1,10 +1,19 @@
 #BlueJ class context
 comment0.target=Hangar
 comment0.text=\r\n\ Almac\u00E9n\ de\ cazas\ de\ combate\ en\ el\ "Hangar"\r\n\r\n\ @author\ (Carlos\ Alvarez)\r\n\ @version\ (02/03/2018)\r\n
-comment1.params=id
-comment1.target=Hangar(int)
+comment1.params=
+comment1.target=Hangar()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Hangar\r\n
-comment2.params=marca\ modelo\ creador\ potencia\ maxVelocidad\ tipo
-comment2.target=void\ addCaza(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ java.lang.String)
+comment2.params=marca\ modelo\ potencia\ ano\ mes\ dia
+comment2.target=void\ addCaza(java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
 comment2.text=\r\n\ \r\n\ @param\ \ A\u00F1ade\ cazas\ de\ combate\ al\ hangar\r\n\ \r\n
-numComments=3
+comment3.params=
+comment3.target=void\ mostrarCazasPorId()
+comment4.params=
+comment4.target=void\ mostrarPorPotencia()
+comment5.params=
+comment5.target=void\ mostrarPorFecha()
+comment6.params=idCaza\ nuevaPotencia
+comment6.target=void\ modificarPotencia(int,\ int)
+comment6.text=\r\n\ Permite\ modificar\ la\ potencia\ de\ un\ caza\r\n
+numComments=7
